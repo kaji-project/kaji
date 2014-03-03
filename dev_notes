@@ -1,0 +1,26 @@
+apache2
+git-core
+libapache2-mod-wsgi
+nagios-plugins
+nagios-plugins-basic
+nagios-plugins-standard
+nagios-plugins-extra
+shinken-common
+adagios
+pynag
+okconfig
+pnp4nagios-web
+pnp4nagios-bin
+shinken-module-broker-livestatus-sqlite
+shinken-module-broker-livestatus
+shinken-module-broker-npcdmod
+shinken-module-retention-picklefile
+
+scp /home/titilambert/projets_opensource/kaji/kaji-project/obs_components/*/*/*.deb kaji@192.168.2.145:/tmp
+# sudo apt-get install apache2 libapache2-mod-wsgi git-core nagios-plugins nagios-plugins-basic nagios-plugins-standard nagios-plugins-extra
+# sudo dpkg -i shinken-common*.deb shinken-module-broker-livestatus-sqlite*.deb  shinken-module-broker-livestatus*.deb  shinken-module-broker-npcdmod*.deb  shinken-module-retention-picklefile*.deb  adagios*.deb pynag*.deb pnp4nagios-web*.deb pnp4nagios-bin*.deb shinken-module-broker-simplelog*.deb shinken-module-poller-nrpe*.deb kaji*.deb
+# sudo apt-get install -f
+
+
+HTTP AUTH SAME IN ADAGIOS/PNP4NAGIOS/NAGVIS....
+                   OK       OK

@@ -1,0 +1,7 @@
+<directory name="kaji" rev="2" srcmd5="ee2ef577c815ee5a609b44a07bb22505" vrev="2">
+  <entry md5="2a13403dc3525d99eb33f125ef0de4b0" mtime="1393825330" name="build_package.sh" size="633" />
+  <entry md5="56ebc044b8259fc1c9e939981dbae991" mtime="1393825331" name="kaji_0.1-1.debian.tar.xz" size="12820" />
+  <entry md5="ee46c3e17606c94cbf39aac27d2b309f" mtime="1393825331" name="kaji_0.1-1.dsc" size="1002" />
+  <entry md5="1e53def5a9261230f709328224471da0" mtime="1393825332" name="kaji_0.1-1_amd64.changes" size="1390" />
+  <entry md5="d19ea41c720b4955c949c822d20a93f7" mtime="1393825332" name="kaji_0.1.orig.tar.gz" size="13860" />
+</directory>

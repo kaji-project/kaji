@@ -1,0 +1,47 @@
+Source: kaji
+Maintainer: Thibault Cohen <thibault.cohen@savoirfairelinux.com>
+Section: net
+Priority: extra
+Vcs-Git: git://anonscm.debian.org/collab-maint/shinken.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/shinken.git;a=summary
+Standards-Version: 3.9.5
+XS-Python-Version: >= 2.5, << 3.0
+Build-Depends: python, debhelper (>= 9), quilt, python-setuptools, po-debconf
+Homepage: http://www.shinken-monitoring.org
+
+Package: kaji
+Architecture: any
+Depends: ${misc:Depends},
+ apache2,
+ git-core,
+ libapache2-mod-wsgi,
+ nagios-plugins,
+ nagios-plugins-basic,
+ nagios-plugins-standard,
+ nagios-plugins-extra,
+ shinken-common,
+ shinken-module-broker-livestatus-sqlite,
+ shinken-module-broker-livestatus,
+ shinken-module-broker-npcdmod,
+ shinken-module-broker-simplelog,
+ shinken-module-poller-nrpe,
+ shinken-module-retention-picklefile,
+ adagios,
+ pynag,
+ pnp4nagios-web,
+ pnp4nagios-bin,
+# okconfig,
+# nagvis,
+Description: Simple monitoring solution - Meta-package
+ This meta-package install a fully functionnal monitoring solution
+ based on Shinken and Adagios.
+ .
+ Shinken is a new, Nagios compatible monitoring tool, written in Python. The
+ main goal of Shinken is to allow users to have a fully flexible architecture
+ for their monitoring system that can easily scale to large environments.
+ .
+ Adagios is a web based Nagios configuration interface built to be simple and
+ intuitive in design, exposing less of the clutter under the hood of nagios.
+ Additionally adagios has a rest interface for both status and configuration
+ data as well a feature complete status interface that can be used as an
+ alternative to nagios web interface.
