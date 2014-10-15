@@ -29,7 +29,7 @@ Depends: ${misc:Depends},
  grafana (= 1.8.1-1kaji0.2),
  adagios,
  pynag,
- nagvis,
+ nagvis (= 1.7.10+dfsg1-3~debmon70+1kaji0.2),
 Description: Simple monitoring solution - Meta-package
  This meta-package install a fully functionnal monitoring solution
  based on Shinken and Adagios.
