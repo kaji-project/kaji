@@ -27,8 +27,8 @@ Depends: ${misc:Depends},
  shinken-module-simple-log (= 1.4.1-1kaji0.2),
  shinken-module-booster-nrpe (= 1.4.1-2kaji0.2),
  grafana (= 1.8.1-1kaji0.2),
- adagios,
- pynag,
+ adagios (= 1.6.0-1kaji0.2),
+ pynagi (= 0.9.1-1kaji0.2),
  nagvis (= 1.7.10+dfsg1-3~debmon70+1kaji0.2),
 Description: Simple monitoring solution - Meta-package
  This meta-package install a fully functionnal monitoring solution
