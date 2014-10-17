@@ -13,7 +13,12 @@ case "$1" in
     then
         chown -R shinken:shinken /etc/shinken/
         usermod -s /bin/bash shinken
+        usermod -G shinken www-data
+        chgrp -R www-data /etc/shinken
+        chmod -R g+w /etc/shinken
         cd /etc/shinken/
+        su www-data -c 'git config --global user.email "adagios@kaji-project.org"'
+        su www-data -c 'git config --global user.name "adagios"'
         su shinken -c 'git config --global user.email "shinken@kaji-project.org"'
         su shinken -c 'git config --global user.name "shinken"'
         su shinken -c 'git init'
