@@ -20,7 +20,7 @@ case "$1" in
         su shinken -c 'git add .'
         su shinken -c 'git commit -a -m "Initial Kaji installation commit"'
     fi
-    a2ensite adagios
+#    a2ensite adagios
     service apache2 restart || "Failed to restart Apache2. You have to restart Apache2 to update its configuration"
     service shinken restart || "Failed to restart Shinken. You have to restart Shinken to update its configuration"
     ;;
