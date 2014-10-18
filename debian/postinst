@@ -28,6 +28,9 @@ case "$1" in
 #    a2ensite adagios
     service shinken restart || echo "Failed to restart Shinken. You have to restart Shinken to update its configuration"
     service apache2 reload || echo "Failed to restart Apache2. You have to restart Apache2 to update its configuration"
+    cd /usr/share/grafana
+    lessc -x --include-path=src/vendor/bootstrap/less src/css/less/bootstrap.light.less > src/css/grafana.light.min.css
+    lessc -x --include-path=src/vendor/bootstrap/less src/css/less/bootstrap.dark.less > src/css/grafana.dark.min.css
     echo
     echo "Kaji install finished"
     echo
