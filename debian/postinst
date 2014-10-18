@@ -25,12 +25,11 @@ case "$1" in
         su shinken -c 'git add .'
         su shinken -c 'git commit -a -m "Initial Kaji installation commit"'
     fi
-#    a2ensite adagios
+    a2ensite influxdb
     service shinken restart || echo "Failed to restart Shinken. You have to restart Shinken to update its configuration"
     service apache2 reload || echo "Failed to restart Apache2. You have to restart Apache2 to update its configuration"
-    cd /usr/share/grafana
-    lessc -x --include-path=src/vendor/bootstrap/less src/css/less/bootstrap.light.less > src/css/grafana.light.min.css
-    lessc -x --include-path=src/vendor/bootstrap/less src/css/less/bootstrap.dark.less > src/css/grafana.dark.min.css
+    lessc -x --include-path=/usr/share/grafana/vendor/bootstrap/less /usr/share/grafana/css/less/bootstrap.light.less > /usr/share/grafana/css/grafana.light.min.css
+    lessc -x --include-path=/usr/share/grafana/vendor/bootstrap/less /usr/share/grafana/css/less/bootstrap.dark.less > /usr/share/grafana/css/grafana.dark.min.css
     echo
     echo "Kaji install finished"
     echo
