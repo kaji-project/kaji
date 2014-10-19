@@ -29,8 +29,10 @@ case "$1" in
     a2enmod proxy
     a2enmod proxy_http
     a2ensite influxdb
+
+    service apache2 restart || echo "Failed to restart Apache2. You have to restart Apache2 to update its configuration"
     service shinken restart || echo "Failed to restart Shinken. You have to restart Shinken to update its configuration"
-    service apache2 reload || echo "Failed to restart Apache2. You have to restart Apache2 to update its configuration"
+    service apache2 reload || echo "Failed to reload Apache2. You have to restart Apache2 to update its configuration"
     lessc -x --include-path=/usr/share/grafana/vendor/bootstrap/less /usr/share/grafana/css/less/bootstrap.light.less > /usr/share/grafana/css/grafana.light.min.css
     lessc -x --include-path=/usr/share/grafana/vendor/bootstrap/less /usr/share/grafana/css/less/bootstrap.dark.less > /usr/share/grafana/css/grafana.dark.min.css
     echo
