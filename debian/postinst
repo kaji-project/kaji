@@ -34,14 +34,14 @@ case "$1" in
     service apache2 restart || echo "Failed to restart Apache2. You have to restart Apache2 to update its configuration"
     service shinken restart || echo "Failed to restart Shinken. You have to restart Shinken to update its configuration"
     service influxdb restart || echo "Failed to restart Influxdb. You have to restart Shinken to update its configuration"
-    service apache2 reload || echo "Failed to reload Apache2. You have to restart Apache2 to update its configuration"
     # Create influx dbs and users
     # Shinken
-    curl -X GET 'http://172.17.0.11:8086/db?u=root&p=root' 2> /dev/null |grep shinken > /dev/null
+    curl -X GET 'http://localhost:8086/db?u=root&p=root' 2> /dev/null |grep shinken > /dev/null
     if [ $? -ne 0 ]
     # shinken db doesn't exist
     then
         # create Shinken database
+        echo "Create Shinken Database"
         curl -X POST 'http://localhost:8086/db?u=root&p=root' -d '{"name": "shinken"}'
         ## kaji user
         curl -X POST 'http://localhost:8086/db/shinken/users?u=root&p=root' -d '{"name": "kaji", "password": "kaji"}'
@@ -53,16 +53,18 @@ case "$1" in
         curl -X POST 'http://localhost:8086/db/shinken/users/shinken?u=root&p=root' -d '{ "readFrom": "^$", "writeTo": ".*" }'
     fi
     # Grafana
-    curl -X GET 'http://172.17.0.11:8086/db?u=root&p=root' 2> /dev/null |grep grafana > /dev/null
+    curl -X GET 'http://localhost:8086/db?u=root&p=root' 2> /dev/null |grep grafana > /dev/null
     if [ $? -ne 0 ]
     # grafana db doesn't exist
     then
         # create Grafana database
+        echo "Create Grafana Database"
         curl -X POST 'http://localhost:8086/db?u=root&p=root' -d '{"name": "grafanashinken"}' # add database user
         ## grafana user
         curl -X POST 'http://localhost:8086/db/grafana/users?u=root&p=root' -d '{"name": "grafana", "password": "grafana"}'
     fi
 
+    service apache2 reload || echo "Failed to reload Apache2. You have to restart Apache2 to update its configuration"
     echo
     echo "Kaji install finished"
     echo
