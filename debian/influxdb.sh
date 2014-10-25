@@ -30,3 +30,6 @@ curl -X POST 'http://localhost:8086/db/grafana/users?u=root&p=root' \
 # update user's password
 curl -X POST 'http://localhost:8086/db/users/root?u=root&p=root' \
   -d '{"password": "kaji"}'
+
+# List databases
+curl -X GET 'http://172.17.0.11:8086/db?u=root&p=root'
