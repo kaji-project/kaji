@@ -10,8 +10,6 @@ case "$1" in
     # Enable apache mods
     a2enmod proxy
     a2enmod proxy_http
-    # Enable influxdb proxy
-    a2ensite influxdb
     echo
     echo "Kaji install finished"
     echo

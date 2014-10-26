@@ -1,2 +1,3 @@
-configs/influxdb.conf etc/apache2/sites-available/
-scripts/* usr/sbin
+configs usr/share/kaji
+scripts usr/share/kaji
+tools usr/share/kaji
