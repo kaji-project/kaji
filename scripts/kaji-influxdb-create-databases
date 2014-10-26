@@ -1,4 +1,6 @@
 #!/bin/bash
+
+echo "Create user and databases influxDB"
 # Create influx dbs and users
 # Shinken
 ret=$(curl -f -L -X GET 'http://localhost:8086/db?u=root&p=root' 2> /dev/null | grep shinken || true)
@@ -29,3 +31,5 @@ then
   curl -X POST 'http://localhost:8086/db/grafana/users?u=root&p=root' -d '{"name": "grafana", "password": "grafana"}'
 fi
 
+echo "Creatation of user and databases influxDB DONE"
+exit 0
