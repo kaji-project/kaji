@@ -10,12 +10,6 @@ INSTALLED_FILES
 .gitignore
 modules/*
 
-# Logs and databases #
-######################
-*.log*
-*.sqlite
-*.db*
-
 
 # OS generated files #
 ######################
