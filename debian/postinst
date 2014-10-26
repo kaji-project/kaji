@@ -7,66 +7,15 @@ set -e
 
 case "$1" in
   configure)
-
-    # Git init /etc/shinken
-    if [ ! -x /etc/shinken/.git ]
-    then
-        chown -R shinken:shinken /etc/shinken/
-        usermod -s /bin/bash shinken
-        usermod -G shinken www-data
-        chgrp -R www-data /etc/shinken
-        chmod -R g+w /etc/shinken
-        cd /etc/shinken/
-        #usermod -s /bin/bash www-data
-        echo "[user]" > /var/www/.gitconfig
-        echo "        email = adagios@kaji-project.org" >> /var/www/.gitconfig
-        echo "        name = Adagios" >> /var/www/.gitconfig
-        su shinken -c 'git config --global user.email "shinken@kaji-project.org"'
-        su shinken -c 'git config --global user.name "shinken"'
-        su shinken -c 'git init'
-        su shinken -c 'git add .'
-        su shinken -c 'git commit -a -m "Initial Kaji installation commit"'
-    fi
+    # Enable apache mods
     a2enmod proxy
     a2enmod proxy_http
+    # Enable influxdb proxy
     a2ensite influxdb
-
-    service apache2 restart || echo "Failed to restart Apache2. You have to restart Apache2 to update its configuration"
-    service shinken restart || echo "Failed to restart Shinken. You have to restart Shinken to update its configuration"
-    service influxdb restart || echo "Failed to restart Influxdb. You have to restart Shinken to update its configuration"
-    # Create influx dbs and users
-    # Shinken
-    curl -X GET 'http://localhost:8086/db?u=root&p=root' 2> /dev/null |grep shinken > /dev/null
-    if [ $? -ne 0 ]
-    # shinken db doesn't exist
-    then
-        # create Shinken database
-        echo "Create Shinken Database"
-        curl -X POST 'http://localhost:8086/db?u=root&p=root' -d '{"name": "shinken"}'
-        ## kaji user
-        curl -X POST 'http://localhost:8086/db/shinken/users?u=root&p=root' -d '{"name": "kaji", "password": "kaji"}'
-        ### Set kaji user as reader only
-        curl -X POST 'http://localhost:8086/db/shinken/users/shinken?u=root&p=root' -d '{ "readFrom": ".*", "writeTo": "^$" }'
-        ## Shinken user
-        curl -X POST 'http://localhost:8086/db/shinken/users?u=root&p=root' -d '{"name": "shinken", "password": "shinken"}'
-        ## Set shinken user as writer only
-        curl -X POST 'http://localhost:8086/db/shinken/users/shinken?u=root&p=root' -d '{ "readFrom": "^$", "writeTo": ".*" }'
-    fi
-    # Grafana
-    curl -X GET 'http://localhost:8086/db?u=root&p=root' 2> /dev/null |grep grafana > /dev/null
-    if [ $? -ne 0 ]
-    # grafana db doesn't exist
-    then
-        # create Grafana database
-        echo "Create Grafana Database"
-        curl -X POST 'http://localhost:8086/db?u=root&p=root' -d '{"name": "grafanashinken"}' # add database user
-        ## grafana user
-        curl -X POST 'http://localhost:8086/db/grafana/users?u=root&p=root' -d '{"name": "grafana", "password": "grafana"}'
-    fi
-
-    service apache2 reload || echo "Failed to reload Apache2. You have to restart Apache2 to update its configuration"
     echo
     echo "Kaji install finished"
+    echo
+    echo "Please run sudo /usr/sbin/kaji-finish-install"
     echo
     ;;
   abort-upgrade)

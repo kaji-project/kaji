@@ -31,6 +31,7 @@ Depends: ${misc:Depends},
  pynag (= 0.9.1-1kaji0.2),
  nagvis (= 1:1.7.10+dfsg1-3~debmon70+1kaji0.2),
  curl,
+ sudo,
  influxdb
 Description: Simple monitoring solution - Meta-package
  This meta-package install a fully functionnal monitoring solution
