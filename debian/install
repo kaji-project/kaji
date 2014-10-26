@@ -1,3 +1,5 @@
-configs usr/share/kaji
+#
+configs/nagvis usr/share/kaji/configs
+#configs/influxdb usr/share/kaji/configs
 scripts usr/share/kaji
 tools usr/share/kaji
