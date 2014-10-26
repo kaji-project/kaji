@@ -1,6 +1,6 @@
-/usr/share/kaji/kaji-finish-install usr/sbin/
-/usr/share/kaji/kaji-influxdb-create-databases usr/sbin/
-/usr/share/kaji/kaji-influxdb-http-config usr/sbin/
-/usr/share/kaji/kaji-nagvis-reset-auth usr/sbin/
-/usr/share/kaji/kaji-services-restart-all usr/sbin/
-/usr/share/kaji/kaji-shinken-init-config usr/sbin/
+/usr/share/kaji/kaji-finish-install.sh usr/sbin/kaji-finish-install
+/usr/share/kaji/kaji-influxdb-create-databases.sh usr/sbin/kaji-influxdb-create-databases
+/usr/share/kaji/kaji-influxdb-http-config.sh usr/sbin/kaji-influxdb-http-config
+/usr/share/kaji/kaji-nagvis-reset-auth.sh usr/sbin/kaji-nagvis-reset-auth
+/usr/share/kaji/kaji-services-restart-all.sh usr/sbin/kaji-services-restart-all
+/usr/share/kaji/kaji-shinken-init-config.sh usr/sbin/kaji-shinken-init-config
