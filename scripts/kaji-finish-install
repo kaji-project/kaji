@@ -7,6 +7,11 @@ fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+
+# Add reverse proxy for influxdb
+$DIR/kaji-influxdb-http-config
+# Reset nagvis auth
+$DIR/kaji-nagvis-reset-auth
 # Restarting services
 $DIR/kaji-services-restart-all
 # Create influx dbs
