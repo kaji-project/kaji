@@ -11,6 +11,6 @@ mkdir -p /etc/nagvis/
 'cp' /usr/share/kaji/configs/nagvis/auth.db /etc/nagvis/
 chown www-data:www-data /etc/nagvis/auth.db 
 
-echo "Reset Done
+echo "Reset Done"
 
 exit 0
