@@ -4,3 +4,4 @@
 /usr/share/kaji/scripts/kaji-nagvis-reset-auth.sh usr/sbin/kaji-nagvis-reset-auth
 /usr/share/kaji/scripts/kaji-services-restart-all.sh usr/sbin/kaji-services-restart-all
 /usr/share/kaji/scripts/kaji-shinken-init-config.sh usr/sbin/kaji-shinken-init-config
+/usr/share/kaji/scripts/kaji-nagvis-config.sh usr/sbin/kaji-nagvis-config
