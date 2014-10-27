@@ -12,6 +12,7 @@ if [ ! -x /etc/shinken/.git ]
 then
   usermod -s /bin/bash shinken
   usermod -G www-data shinken
+  chown -R shinken:shinken /etc/shinken/
   cd /etc/shinken/
   #usermod -s /bin/bash www-data
   echo "[user]" > /var/www/.gitconfig
