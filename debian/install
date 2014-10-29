@@ -1,3 +1,4 @@
 configs usr/share/kaji
 scripts usr/share/kaji
 tools usr/share/kaji
+images/kaji-fav.ico var/www/html
