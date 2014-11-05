@@ -20,3 +20,5 @@ $DIR/kaji-influxdb-create-databases
 $DIR/kaji-shinken-init-config
 # Set Nagvis configuration
 $DIR/kaji-nagvis-config
+# Fix Nagios plugins rights
+$DIR/kaji-nagiosplugins-fix.sh
