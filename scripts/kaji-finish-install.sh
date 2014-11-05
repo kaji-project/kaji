@@ -21,4 +21,4 @@ $DIR/kaji-shinken-init-config
 # Set Nagvis configuration
 $DIR/kaji-nagvis-config
 # Fix Nagios plugins rights
-$DIR/kaji-nagiosplugins-fix.sh
+$DIR/kaji-nagiosplugins-fix
