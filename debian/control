@@ -18,7 +18,6 @@ Depends: ${misc:Depends},
  nagios-plugins,
  nagios-plugins-basic,
  nagios-plugins-standard,
- nagios-plugins-extra,
  shinken-common (= 2.0.3-2kaji0.2),
  shinken-mod-influxdb (= 0.6-1kaji0.2),
  shinken-mod-livestatus (= 1.0.1-2kaji0.2),
@@ -34,6 +33,7 @@ Depends: ${misc:Depends},
  curl,
  sudo,
  influxdb
+recommends: nagios-plugins-extra,
 Description: Simple monitoring solution - Meta-package
  This meta-package install a fully functionnal monitoring solution
  based on Shinken and Adagios.
