@@ -18,7 +18,5 @@ $DIR/kaji-services-restart-all
 $DIR/kaji-influxdb-create-databases
 # Init shinken/adagios config folder
 $DIR/kaji-shinken-init-config
-# Set Nagvis configuration
-$DIR/kaji-nagvis-config
 # Fix Nagios plugins rights
 $DIR/kaji-nagiosplugins-fix
