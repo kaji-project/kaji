@@ -10,7 +10,7 @@ Build-Depends: python, debhelper (>= 9), quilt, python-setuptools, po-debconf
 Homepage: http://www.shinken-monitoring.org
 
 Package: kaji
-Architecture: any
+Architecture: all
 Depends: ${misc:Depends},
  apache2,
  git-core,
