@@ -7,7 +7,10 @@ fi
 
 echo "Setting up InfluxBD Apache reverse proxy"
 
+# TODO PUT THAHT IN rpm
 'cp' /usr/share/kaji/configs/influxdb/influxdb.conf /etc/apache2/sites-available/
+#'cp' /usr/share/kaji/configs/influxdb/influxdb.conf /etc/https/sites-available/
+
 # Enable apache mods
 a2enmod proxy
 a2enmod proxy_http
