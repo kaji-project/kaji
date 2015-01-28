@@ -7,7 +7,6 @@ Group:		Network
 License:	AGPLv3+
 URL:		https://github.com/kaji-project/kaji
 Source0:	https://github.com/kaji-project/kaji/%{name}_%{version}.orig.tar.gz
-Source1:    %{name}_%{version}-%{release}.debian.tar.xz
 
 BuildArch:  noarch
 
