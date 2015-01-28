@@ -1,5 +1,5 @@
-deps_pip:
-  - sphinx
+#deps_pip:
+#  - sphinx
 distro:
   - centos_6
 spec:
