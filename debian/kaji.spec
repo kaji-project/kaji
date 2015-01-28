@@ -12,6 +12,8 @@ BuildArch:  noarch
 
 Requires: curl
 Requires: sudo
+Requires: git
+Requires: nagios-plugins
 
 %description
 Simple monitoring solution - Meta-package
