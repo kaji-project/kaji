@@ -9,6 +9,7 @@ echo "Reset Nagvis Authentication file"
 
 mkdir -p /etc/nagvis/
 'cp' /usr/share/kaji/configs/nagvis/auth.db /etc/nagvis/
+# TODO handle centos
 chown www-data:www-data /etc/nagvis/auth.db 
 
 echo "Reset Done"
