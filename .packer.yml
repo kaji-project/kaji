@@ -2,6 +2,6 @@
 #  - sphinx
 distro:
   - centos_6
-  #- debian_7
+  - debian_7
 spec: debian/kaji.spec
 debian: debian
