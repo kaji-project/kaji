@@ -1,0 +1,8 @@
+#deps_pip:
+#  - sphinx
+distro:
+  - centos_6
+spec:
+  - debian/kaji.spec
+debian:
+  - debian
