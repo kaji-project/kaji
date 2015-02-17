@@ -13,7 +13,6 @@ Package: kaji
 Architecture: all
 Depends: ${misc:Depends},
  apache2,
- git-core,
  libapache2-mod-wsgi,
  nagios-plugins,
  nagios-plugins-basic,
@@ -21,17 +20,17 @@ Depends: ${misc:Depends},
  shinken-common (= 2.0.3-3kaji0.2),
  shinken-mod-influxdb (= 0.8-1kaji0.2),
  shinken-mod-livestatus (= 1.0.1-2kaji0.2),
- shinken-mod-logstore-sqlite (= 1.4.1-1kaji0.2),
+ shinken-mod-logstore-null (= 1.4.1-1kaji0.2),
  shinken-mod-pickle-retention-file-generic (= 1.4.1-2kaji0.2),
  shinken-mod-simple-log (= 1.4.1-1kaji0.2),
  shinken-mod-booster-nrpe (= 1.4.1-2kaji0.2),
  grafana (= 1.9.0-1kaji0.2),
+ grafana-admin (= 1.9.0-1kaji0.2),
  adagios (= 1.6.1-2kaji0.2),
  pynag (= 0.9.1-1kaji0.2),
  rekishi,
  python-openssl,
- curl,
- sudo,
+ kaji-scripts,
  influxdb
 recommends: nagios-plugins-extra, nagvis (= 1:1.7.10-2kaji0.2)
 Description: Simple monitoring solution - Meta-package
@@ -47,3 +46,15 @@ Description: Simple monitoring solution - Meta-package
  Additionally adagios has a rest interface for both status and configuration
  data as well a feature complete status interface that can be used as an
  alternative to nagios web interface.
+
+
+Package: kaji-scripts
+Architecture: all
+Depends: ${misc:Depends},
+ curl,
+ sudo,
+ lsb-release,
+ git-core
+Description: Simple monitoring solution - Scripts Collection
+ This package install a collection of scripts to install Kaji Solution
+

@@ -10,9 +10,9 @@ Source0:	https://github.com/kaji-project/kaji/%{name}_%{version}.orig.tar.gz
 
 BuildArch:  noarch
 
-Requires: curl
-Requires: sudo
-Requires: git
+Requires: kaji-scripts
+Requires: shinken-common
+Requires: 
 
 %description
 Simple monitoring solution - Meta-package
@@ -26,6 +26,20 @@ intuitive in design, exposing less of the clutter under the hood of nagios.
 Additionally adagios has a rest interface for both status and configuration
 data as well a feature complete status interface that can be used as an
 alternative to nagios web interface.
+
+
+%package scripts
+Summary:  Scripts collection for Kaji Solution
+Group:    Network
+Requires: curl
+Requires: sudo
+Requires: git
+Requires: redhat-lsb-core
+
+%description scripts
+Simple monitoring solution - Scripts Collection
+This package install a collection of scripts to install Kaji Solution
+
 
 %prep
 %setup -q
@@ -60,7 +74,7 @@ echo "Please run sudo /usr/sbin/kaji-finish-install"
 echo
 
 
-%files
+%files scripts
 /usr/share/kaji
 /var/www/html/kaji-fav.ico
 /%{_sbindir}/kaji*
