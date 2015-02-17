@@ -29,6 +29,11 @@ then
   curl -X POST 'http://localhost:8086/db?u=root&p=root' -d '{"name": "grafana"}' # add database user
   ## grafana user
   curl -X POST 'http://localhost:8086/db/grafana/users?u=root&p=root' -d '{"name": "grafana", "password": "grafana"}'
+  ## Set grafana user as read only
+  curl -X POST 'http://localhost:8086/db/grafana/users/grafana?u=root&p=root' -d '{ "readFrom": ".*", "writeTo": "^$" }'
+  ## grafana-admin user
+  curl -X POST 'http://localhost:8086/db/grafana/users?u=root&p=root' -d '{"name": "grafana-admin", "password": "grafana-admin"}'
+
 fi
 
 echo "Creatation of user and databases influxDB DONE"

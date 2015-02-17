@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$EUID" -ne 0 ]
+if [ "$(id -u)" -ne 0 ]
   then echo "Please run as root"
   exit
 fi
@@ -8,8 +8,8 @@ fi
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 
-# Add reverse proxy for influxdb
-$DIR/kaji-influxdb-http-config
+# Add Apache configs
+$DIR/kaji-http-config
 # Reset nagvis auth
 $DIR/kaji-nagvis-reset-auth
 # Restarting services
