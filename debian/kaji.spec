@@ -12,7 +12,19 @@ BuildArch:  noarch
 
 Requires: kaji-scripts
 Requires: shinken-common
-Requires: 
+Requires: adagios
+Requires: influxdb
+Requires: grafana
+Requires: grafana-admin
+Requires: influxdb-python
+Requires: rekishi
+Requires: shinken-mod-booster-nrpe
+Requires: shinken-mod-influxdb
+Requires: shinken-mod-livestatus
+Requires: shinken-mod-logstore-null
+Requires: shinken-mod-logstore-sqlite
+Requires: shinken-mod-pickle-retention-file-generic
+Requires: shinken-mod-simple-log
 
 %description
 Simple monitoring solution - Meta-package
@@ -59,11 +71,10 @@ install -pm0644 images/kaji-fav.ico %{buildroot}/var/www/html
 install -dm0755 %{buildroot}/%{_sbindir}/
 ln -sf /usr/share/kaji/scripts/kaji-finish-install.sh %{buildroot}/%{_sbindir}/kaji-finish-install
 ln -sf /usr/share/kaji/scripts/kaji-influxdb-create-databases.sh %{buildroot}/%{_sbindir}/kaji-influxdb-create-databases
-ln -sf /usr/share/kaji/scripts/kaji-influxdb-http-config.sh %{buildroot}/%{_sbindir}/kaji-influxdb-http-config
+ln -sf /usr/share/kaji/scripts/kaji-http-config.sh %{buildroot}/%{_sbindir}/kaji-http-config
 ln -sf /usr/share/kaji/scripts/kaji-nagvis-reset-auth.sh %{buildroot}/%{_sbindir}/kaji-nagvis-reset-auth
 ln -sf /usr/share/kaji/scripts/kaji-services-restart-all.sh %{buildroot}/%{_sbindir}/kaji-services-restart-all
 ln -sf /usr/share/kaji/scripts/kaji-shinken-init-config.sh %{buildroot}/%{_sbindir}/kaji-shinken-init-config
-ln -sf /usr/share/kaji/scripts/kaji-nagvis-config.sh %{buildroot}/%{_sbindir}/kaji-nagvis-config
 ln -sf /usr/share/kaji/scripts/kaji-nagiosplugins-fix.sh %{buildroot}/%{_sbindir}/kaji-nagiosplugins-fix
 
 %post
