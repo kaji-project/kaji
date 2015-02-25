@@ -1,3 +1,9 @@
+kaji (0.1.99.10-2beta1) unstable; urgency=medium
+
+  * Fix script symlinks
+
+ -- Thibault Cohen <thibault.cohen@savoirfairelinux.com>  Wed, 25 Feb 2015 09:15:37 -0500
+
 kaji (0.1.99.10-1beta1) unstable; urgency=medium
 
   * New Kaji release
