@@ -1,4 +1,16 @@
-kaji (0.1.99.10-2beta1) unstable; urgency=medium
+kaji (0.1.99.10-3beta2) unstable; urgency=medium
+
+  * New Kaji release
+
+ -- Sebastien Coavoux <sebastien.coavoux@savoirfairelinux.com>  Fri, 30 Oct 2015 19:49:57 -0500
+
+kaji (0.1.99.10-3beta1) unstable; urgency=medium
+
+  * New Kaji release
+
+ -- Thibault Cohen <thibault.cohen@savoirfairelinux.com>  Fri, 30 Oct 2015 19:48:57 -0500
+
+kkaji (0.1.99.10-2beta1) unstable; urgency=medium
 
   * Fix script symlinks
 
